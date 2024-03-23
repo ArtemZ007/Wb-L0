@@ -1,0 +1,15 @@
+# Используйте официальный образ PostgreSQL как базовый
+FROM postgres:latest
+
+# Установите переменные окружения для конфигурации базы данных
+ENV POSTGRES_DB=mydb
+ENV POSTGRES_USER=myuser
+ENV POSTGRES_PASSWORD=mypassword
+
+# Опционально: добавьте скрипты инициализации или другие файлы
+# COPY init.sql /docker-entrypoint-initdb.d/
+
+# Откройте порт 5432 для подключений к PostgreSQL
+EXPOSE 5432
+
+# Подключаемся к PostgreSQL 
